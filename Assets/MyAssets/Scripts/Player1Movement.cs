@@ -29,12 +29,30 @@ public class Player1Movement : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
+        //determine camera direction on a flat plain
         Vector3 camh = cam.transform.right;
         Vector3 camv = Vector3.Cross(camh, Vector3.up);
 
-        moveDirection = camh * h + camv * v;
-        moveDirection.Normalize();
+        if (h != 0 || v != 0)
+        {
+            moveDirection = camh * h + camv * v;
+            moveDirection.Normalize();
 
-        cc.Move(moveDirection * movementSpeed * Time.deltaTime);
+            cc.Move(moveDirection * movementSpeed * Time.deltaTime);
+
+            anim.SetBool("HasInput", true);
+        }
+        else
+        {
+            anim.SetBool("HasInput", false);
+        }
+
+        Quaternion desiredDirection = Quaternion.LookRotation(moveDirection);
+        transform.rotation = Quaternion.Lerp(transform.rotation, desiredDirection, rotationSpeed);
+
+        Vector3 animationVector = anim.transform.InverseTransformDirection(cc.velocity);
+
+        anim.SetFloat("HorizontalSpeed", animationVector.x);
+        anim.SetFloat("VerticalSpeed", animationVector.z);
     }
 }
