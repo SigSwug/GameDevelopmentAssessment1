@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player1Movement : MonoBehaviour
 {
     [Tooltip("Movement Values")]
-    [SerializeField] float movementSpeed, rotationSpeed;
+    [SerializeField] float movementSpeed, rotationSpeed, gravityForce, jumpForce;
 
     //Components
     CharacterController cc;
@@ -15,6 +15,10 @@ public class Player1Movement : MonoBehaviour
     Camera cam;
 
     public Transform target;
+
+    //Gravity and jump
+    Vector3 playerVelocity;
+    public bool groundedPlayer;
 
     void Start()
     {
@@ -26,6 +30,13 @@ public class Player1Movement : MonoBehaviour
 
     void Update()
     {
+        groundedPlayer = cc.isGrounded;
+        if (groundedPlayer && playerVelocity.y < 0)
+        {
+            if (anim.GetBool("Jump")) anim.SetBool("Jump", false);
+            playerVelocity.y = 0;
+        }
+
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
@@ -48,11 +59,23 @@ public class Player1Movement : MonoBehaviour
         }
 
         Quaternion desiredDirection = Quaternion.LookRotation(moveDirection);
-        transform.rotation = Quaternion.Lerp(transform.rotation, desiredDirection, rotationSpeed);
+        anim.transform.rotation = Quaternion.Lerp(anim.transform.rotation, desiredDirection, rotationSpeed);
 
         Vector3 animationVector = anim.transform.InverseTransformDirection(cc.velocity);
 
         anim.SetFloat("HorizontalSpeed", animationVector.x);
         anim.SetFloat("VerticalSpeed", animationVector.z);
+
+        ProcessGravity();
+    }
+    public void ProcessGravity()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && groundedPlayer)
+        {
+            anim.SetBool("Jump", true);
+            playerVelocity.y += Mathf.Sqrt(jumpForce * -3.0f * gravityForce);
+        }
+        playerVelocity.y += gravityForce * Time.deltaTime;
+        cc.Move(playerVelocity * Time.deltaTime);
     }
 }
