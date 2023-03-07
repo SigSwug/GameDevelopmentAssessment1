@@ -14,6 +14,7 @@ public class CharacterMovementTutorial : MonoBehaviour
     [Header("Controls")]
     public string horizontalMovement, verticalMovement;
     public KeyCode jump;
+    public KeyCode sprint;
 
     //Components
     CharacterController cc;
@@ -33,7 +34,7 @@ public class CharacterMovementTutorial : MonoBehaviour
         cc = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
 
-        cam = Camera.main;
+        cam = GetComponentInChildren<Camera>();
     }
 
     void Update()
@@ -47,6 +48,15 @@ public class CharacterMovementTutorial : MonoBehaviour
 
         float h = Input.GetAxis(horizontalMovement);
         float v = Input.GetAxis(verticalMovement);
+
+        if (Input.GetKeyDown(sprint))
+        {
+            movementSpeed = 5;
+        }
+        else if (Input.GetKeyUp(sprint))
+        {
+            movementSpeed = 3;
+        }
 
         //determine camera direction on a flat plain
         Vector3 camh = cam.transform.right;
