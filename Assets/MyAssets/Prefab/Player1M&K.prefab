@@ -3361,6 +3361,7 @@ GameObject:
   - component: {fileID: 7933380809671169113}
   - component: {fileID: 7933380809671169114}
   - component: {fileID: 7933380809671169115}
+  - component: {fileID: 1771562596}
   m_Layer: 0
   m_Name: Player1M&K
   m_TagString: Player
@@ -3401,9 +3402,9 @@ CharacterController:
   m_Radius: 0.34
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.008
+  m_SkinWidth: 0.0001
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0.92, z: 0}
+  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &7933380809671169112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3497,6 +3498,20 @@ CapsuleCollider:
   m_Height: 2.11
   m_Direction: 1
   m_Center: {x: -0.010614365, y: 0.86831427, z: 0.0056968927}
+--- !u!114 &1771562596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7933380809671169092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9774a25b1e4924c9fb7a411b955f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: Bop
+  playerNumber: 1
 --- !u!1 &7933380809948738068
 GameObject:
   m_ObjectHideFlags: 0
