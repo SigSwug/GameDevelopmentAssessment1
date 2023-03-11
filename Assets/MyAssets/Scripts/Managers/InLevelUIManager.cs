@@ -9,7 +9,7 @@ public class InLevelUIManager : MonoBehaviour
     public CanvasGroup resultGroup;
     public TMP_Text resultTitle;
 
-    public float fadeRate;
+    float fadeRate = 0.0001f;
 
     public void UpdateUI()
     {
@@ -19,7 +19,7 @@ public class InLevelUIManager : MonoBehaviour
         }
         else if (LevelManager.instance.currentState == LevelManager.GameStates.GameOver)
         {
-            centreText.text = "GameOver";
+            centreText.text = "GAMEOVER!";
         }
     }
 
@@ -32,11 +32,11 @@ public class InLevelUIManager : MonoBehaviour
     {
         if (LevelManager.instance.currentState == LevelManager.GameStates.Lost)
         {
-            resultTitle.text = "Failed!";
+            resultTitle.text = "FAILED!";
         }
         else if (LevelManager.instance.currentState == LevelManager.GameStates.Won)
         {
-            resultTitle.text = "Congrats!";
+            resultTitle.text = "Congrats, You've Won!";
         }
 
         while (resultGroup.alpha < 0.9)

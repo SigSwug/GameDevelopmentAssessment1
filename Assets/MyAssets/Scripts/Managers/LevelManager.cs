@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
         //1800 for 30 minutes
         //1200 for 20 minutes
         //600 for 10 minutes
-        timer.StartTimer(300f);
+        timer.StartTimer(303f);
     }
 
     void Update()
@@ -55,13 +55,22 @@ public class LevelManager : MonoBehaviour
         {
             UIManager.UpdateUI();
         }
+        else if (currentState == GameStates.Won)
+        {
+            UIManager.UpdateUI();
+            UIManager.EndGameUI();
+            
+            Time.timeScale = 0;
+        }
+        else if (currentState == GameStates.GameOver)
+        {
+            UIManager.UpdateUI();
+            UIManager.EndGameUI();
+
+            Time.timeScale = 0;
+        }
     }
     //run game over if timer runs out before level completion
-    public void LevelEnded()
-    {
-        currentState = GameStates.GameOver;
 
-        UIManager.UpdateUI();
-    }
     //update saved highscore if time taken to complete the level is faster ther last
 }

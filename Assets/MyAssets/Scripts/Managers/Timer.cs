@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
     public string displayTime;
     public bool isTiming = false;
 
-    public UnityEvent timesUp;
+    //public UnityEvent timesUp;
 
     void FixedUpdate()
     {
@@ -29,12 +29,24 @@ public class Timer : MonoBehaviour
             {
                 displayTime = "00:00";
                 isTiming = false;
-                timesUp.Invoke();
+                //timesUp.Invoke();
             }
             else
             {
                 displayTime = string.Format("{0}:{1}", minutes, seconds);
             }
+        }
+    }
+
+    void Update()
+    {
+        if (LevelManager.instance.currentState == LevelManager.GameStates.Won)
+        {
+            isTiming = false;
+        }
+        else if (currentTime <= 0)
+        {
+            LevelManager.instance.currentState = LevelManager.GameStates.GameOver;
         }
     }
 
