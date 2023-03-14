@@ -29,6 +29,8 @@ public class LevelManager : MonoBehaviour
     public PlayerData[] players;
     public Transform[] playerSpawns;
 
+    public Vector3[] playerRespawnPosition;
+
     //timer
     [Header("LevelSettings")]
     public Timer timer;
@@ -45,7 +47,7 @@ public class LevelManager : MonoBehaviour
         //1800 for 30 minutes
         //1200 for 20 minutes
         //600 for 10 minutes
-        timer.StartTimer(303f);
+        timer.StartTimer(300f);
     }
 
     void Update()
@@ -69,6 +71,11 @@ public class LevelManager : MonoBehaviour
 
             Time.timeScale = 0;
         }
+    }
+
+    public void PlayerRespawn()
+    {
+        
     }
     //run game over if timer runs out before level completion
 
