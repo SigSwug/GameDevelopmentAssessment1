@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
     //list of player prefabs
     [Header("Players")]
     public PlayerData[] players;
-    public Transform[] playerSpawns;
+    //public Transform[] playerSpawns;
 
     public Vector3[] playerRespawnPosition;
 
@@ -75,7 +75,7 @@ public class LevelManager : MonoBehaviour
 
     public void PlayerRespawn()
     {
-        
+
     }
     //run game over if timer runs out before level completion
 

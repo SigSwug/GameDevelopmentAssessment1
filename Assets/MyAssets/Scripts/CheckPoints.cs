@@ -18,7 +18,7 @@ public class CheckPoints : MonoBehaviour
         ren.material.SetColor("_EmissionColor", inactiveEmission);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
