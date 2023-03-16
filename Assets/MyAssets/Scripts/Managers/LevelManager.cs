@@ -72,11 +72,6 @@ public class LevelManager : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-
-    public void PlayerRespawn()
-    {
-
-    }
     //run game over if timer runs out before level completion
 
     //update saved highscore if time taken to complete the level is faster ther last
