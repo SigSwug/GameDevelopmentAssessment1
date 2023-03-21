@@ -14,13 +14,13 @@ public class SimpleEnemyAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
 
-        foreach (PlayerData player in LevelManager.instance.players)
+        /*foreach (PlayerData player in LevelManager.instance.players)
         {
             players.Add(player.gameObject);
         }
         CheckForClosestPlayer();
 
-        InvokeRepeating("CheckForClosestPlayer", 3, 3);
+        InvokeRepeating("CheckForClosestPlayer", 3, 3);*/
     }
 
     void Update()

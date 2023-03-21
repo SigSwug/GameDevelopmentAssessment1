@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
 
     //list of player prefabs
     [Header("Players")]
-    public PlayerData[] players;
+    public GameObject[] players;
     //public Transform[] playerSpawns;
 
     public Vector3[] playerRespawnPosition;
@@ -64,6 +64,14 @@ public class LevelManager : MonoBehaviour
             
             Time.timeScale = 0;
         }
+        else if (currentState == GameStates.Lost)
+        {
+            UIManager.UpdateUI();
+            UIManager.EndGameUI();
+
+            Time.timeScale = 0;
+        }
+        //run game over if timer runs out before level completion
         else if (currentState == GameStates.GameOver)
         {
             UIManager.UpdateUI();
@@ -72,7 +80,12 @@ public class LevelManager : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-    //run game over if timer runs out before level completion
-
-    //update saved highscore if time taken to complete the level is faster ther last
+    public void SetGameStateToWon()
+    {
+        currentState = GameStates.Won;
+    }
+    public void SetGameStateToLost()
+    {
+        currentState = GameStates.Lost;
+    }
 }

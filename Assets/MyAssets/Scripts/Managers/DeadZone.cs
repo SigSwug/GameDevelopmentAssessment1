@@ -8,7 +8,7 @@ public class DeadZone : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            int playerNumber = other.GetComponent<PlayerData>().playerNumber - 1;
+            int playerNumber = other.GetComponent<PlayerNumber>().playerNumber - 1;
 
             //Get a reference to the movement script and deactivate it.
             CharacterMovementTutorial moveScript = other.GetComponent<CharacterMovementTutorial>();

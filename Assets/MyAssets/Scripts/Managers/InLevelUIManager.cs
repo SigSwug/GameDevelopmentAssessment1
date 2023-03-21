@@ -9,6 +9,9 @@ public class InLevelUIManager : MonoBehaviour
     public CanvasGroup resultGroup;
     public TMP_Text resultTitle;
 
+    public PlayerNumber player1;
+    public PlayerNumber player2;
+
     float fadeRate = 0.0001f;
 
     public void UpdateUI()
@@ -30,13 +33,13 @@ public class InLevelUIManager : MonoBehaviour
 
     IEnumerator DisplayCanvas(float rate)
     {
-        if (LevelManager.instance.currentState == LevelManager.GameStates.Lost)
+        if (LevelManager.instance.currentState == LevelManager.GameStates.Won)
         {
-            resultTitle.text = "FAILED!";
+            resultTitle.text = ("Congrats " + player1.playerName + ", You've Won!");
         }
-        else if (LevelManager.instance.currentState == LevelManager.GameStates.Won)
+        else if (LevelManager.instance.currentState == LevelManager.GameStates.Lost)
         {
-            resultTitle.text = "Congrats, You've Won!";
+            resultTitle.text = ("Congrats " + player2.playerName + ", You've Won!");
         }
 
         while (resultGroup.alpha < 0.9)
