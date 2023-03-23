@@ -44,6 +44,10 @@ public class Timer : MonoBehaviour
         {
             isTiming = false;
         }
+        else if (LevelManager.instance.currentState == LevelManager.GameStates.Lost)
+        {
+            isTiming = false;
+        }
         else if (currentTime <= 0)
         {
             LevelManager.instance.currentState = LevelManager.GameStates.GameOver;

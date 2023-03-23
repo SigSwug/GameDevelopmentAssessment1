@@ -19,7 +19,7 @@ public class GameMaster : MonoBehaviour
             PrintScore();
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        /*if (Input.GetKeyDown(KeyCode.S))
         {
             saveData.FillSaveData();
             SaveSystem.instance.SaveGame(saveData);
@@ -32,7 +32,7 @@ public class GameMaster : MonoBehaviour
             saveData.FillTempList();
             Debug.Log("new data loaded");
             PrintScore();
-        }
+        }*/
         if (Input.GetKeyDown(KeyCode.R))
         {
             saveData.ResetData();

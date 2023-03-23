@@ -5,5 +5,4 @@ using UnityEngine;
 public class PlayerNumber : MonoBehaviour
 {
     public int playerNumber;
-    public string playerName;
 }

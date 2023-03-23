@@ -15,7 +15,6 @@ public class Health : MonoBehaviour
 
     public virtual void TakeDamage(float damageAmount)
     {
-        Debug.Log("OUCH");
         OnDamaged.Invoke();
 
         currentHealth -= damageAmount;
