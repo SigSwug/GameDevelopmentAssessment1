@@ -45,15 +45,27 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+
         //1800 for 30 minutes
         //1200 for 20 minutes
         //600 for 10 minutes
         timer.StartTimer(300f);
 
-        for (int i =0; i < players.Length; i++)
+        for (int i = 0; i < players.Length; i++)
         {
             players[i].GetComponentInChildren<TMP_Text>().text = GameManager.instance.currentPlayers[i].playerName;
         }
+    }
+
+    //Used in Unity Events on the finish line objects
+    public void SetGameStateToWon()
+    {
+        currentState = GameStates.Won;
+    }
+    public void SetGameStateToLost()
+    {
+        currentState = GameStates.Lost;
     }
 
     void Update()
@@ -67,37 +79,27 @@ public class LevelManager : MonoBehaviour
         {
             UIManager.UpdateUI();
             UIManager.EndGameUI();
-            Invoke("SaveResultsAndLoadScene", 2);
+            Invoke("SaveResultsAndLoadScene", 1);
 
-            Time.timeScale = 0;
+            Time.timeScale = 0.5f;
         }
         else if (currentState == GameStates.Lost)
         {
             UIManager.UpdateUI();
             UIManager.EndGameUI();
-            Invoke("SaveResultsAndLoadScene", 2);
+            Invoke("SaveResultsAndLoadScene", 1);
 
-            Time.timeScale = 0;
+            Time.timeScale = 0.5f;
         }
         //run game over if timer runs out before level completion
         else if (currentState == GameStates.GameOver)
         {
             UIManager.UpdateUI();
             UIManager.EndGameUI();
-            Invoke("SaveResultsAndLoadScene", 2);
+            Invoke("SaveResultsAndLoadScene", 1);
 
-            Time.timeScale = 0;
+            Time.timeScale = 0.5f;
         }
-    }
-
-    //Used in Unity Events on the finish line objects
-    public void SetGameStateToWon()
-    {
-        currentState = GameStates.Won;
-    }
-    public void SetGameStateToLost()
-    {
-        currentState = GameStates.Lost;
     }
 
     void SaveResultsAndLoadScene()
