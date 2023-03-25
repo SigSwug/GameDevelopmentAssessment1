@@ -12,7 +12,7 @@ public class ScoreBoardManager : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             scores[i].playerName.text = GameManager.instance.saveData.highScorePlayerNames[i];
-            scores[i].kills.text = "Kills: " + GameManager.instance.saveData.highScoreTimeRemainingOnCompletion[i];
+            scores[i].kills.text = "Time Left: " + GameManager.instance.saveData.highScoreTimeRemainingOnCompletion[i];
         }
     }
 }

@@ -21,7 +21,7 @@ public class SortingExample : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             numbers.Sort(SortFunc);
-            players.Sort(SortPlayerFunc);
+            //players.Sort(SortPlayerFunc);
         }
     }
 
@@ -41,7 +41,7 @@ public class SortingExample : MonoBehaviour
         }
     }
 
-    int SortPlayerFunc(PlayerData a, PlayerData b)
+    /*int SortPlayerFunc(PlayerData a, PlayerData b)
     {
         if (a.playerNumber > b.playerNumber)
         {
@@ -55,5 +55,5 @@ public class SortingExample : MonoBehaviour
         {
             return 0;
         }
-    }
+    }*/
 }

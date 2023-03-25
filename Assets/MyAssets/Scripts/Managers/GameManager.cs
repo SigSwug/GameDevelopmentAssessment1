@@ -52,31 +52,38 @@ public class GameManager : MonoBehaviour
 
     public void FillTempList()
     {
-        //CheckForEmpties();
+        tempScoreBoard = new List<PlayerData>();
         for (int i = 0; i < 10; i++)
         {
             PlayerData data = new PlayerData();
             data.playerName = saveData.highScorePlayerNames[i];
+            data.timeLeft = saveData.highScoreTimeRemainingOnCompletion[i];
             tempScoreBoard.Add(data);
         }
+        foreach (PlayerData player in currentPlayers)
+        {
+            tempScoreBoard.Add(player);
+        }
     }
+
     public void FillSaveData()
     {
-        tempScoreBoard.Sort(SortPlayerFunc);
+        tempScoreBoard.Sort(PlayerSortFunction);
 
         for (int i = 0; i < 10; i++)
         {
             saveData.highScorePlayerNames[i] = tempScoreBoard[i].playerName;
+            saveData.highScoreTimeRemainingOnCompletion[i] = tempScoreBoard[i].timeLeft;
         }
         SaveSystem.instance.SaveGame(saveData);
     }
-    int SortPlayerFunc(PlayerData a, PlayerData b)
+    int PlayerSortFunction(PlayerData a, PlayerData b)
     {
-        if (a.playerNumber > b.playerNumber)
+        if (a.timeLeft < b.timeLeft)
         {
             return +1;
         }
-        else if (a.playerNumber < b.playerNumber)
+        else if (a.timeLeft > b.timeLeft)
         {
             return -1;
         }
@@ -85,6 +92,7 @@ public class GameManager : MonoBehaviour
             return 0;
         }
     }
+
     public void AddPlayerScore(PlayerData data)
     {
         if (tempScoreBoard.Contains(data))
@@ -99,13 +107,13 @@ public class GameManager : MonoBehaviour
     }
     /*void CheckForEmpties()
     {
-        if (highScorePlayerNames.Length == 0)
+        if (saveData.highScorePlayerNames.Length == 0)
         {
-            highScorePlayerNames = new string[10];
+            saveData.highScorePlayerNames = new string[10];
         }
-        if (highScoreTimeRemainingOnCompletion.Length == 0)
+        if (saveData.highScoreTimeRemainingOnCompletion.Length == 0)
         {
-            highScoreTimeRemainingOnCompletion = new float[10];
+            saveData.highScoreTimeRemainingOnCompletion = new float[10];
         }
     }*/
 }
