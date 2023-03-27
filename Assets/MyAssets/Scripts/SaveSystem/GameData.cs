@@ -8,8 +8,6 @@ public class GameData
 {
     public int score = 0;
 
-    public float timeRemainingOnCompletion;
-
     //store the information of high scores into an array of 10
     public float[] highScoreTimeRemainingOnCompletion = new float[10];
     public string[] highScorePlayerNames = new string[10];

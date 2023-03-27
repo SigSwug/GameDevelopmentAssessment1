@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour
     //timer
     [Header("LevelSettings")]
     public Timer timer;
+    public PlayerData playerData;
 
     //game states
     public enum GameStates {Won, Lost, Paused, Start, GameOver}
@@ -81,6 +82,7 @@ public class LevelManager : MonoBehaviour
             UIManager.EndGameUI();
             Invoke("SaveResultsAndLoadScene", 1);
 
+            timer.isTiming = false;
             Time.timeScale = 0.5f;
         }
         else if (currentState == GameStates.Lost)
@@ -89,6 +91,7 @@ public class LevelManager : MonoBehaviour
             UIManager.EndGameUI();
             Invoke("SaveResultsAndLoadScene", 1);
 
+            timer.isTiming = false;
             Time.timeScale = 0.5f;
         }
         //run game over if timer runs out before level completion
@@ -98,6 +101,7 @@ public class LevelManager : MonoBehaviour
             UIManager.EndGameUI();
             Invoke("SaveResultsAndLoadScene", 1);
 
+            timer.isTiming = false;
             Time.timeScale = 0.5f;
         }
     }

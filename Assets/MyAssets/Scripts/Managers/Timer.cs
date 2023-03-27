@@ -29,7 +29,6 @@ public class Timer : MonoBehaviour
             {
                 displayTime = "00:00";
                 isTiming = false;
-                //timesUp.Invoke();
             }
             else
             {
