@@ -42,11 +42,11 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        /*if (Input.GetKeyDown(KeyCode.J))
         {
             FillTempList();
             FillSaveData();
-        }
+        }*/
     }
 
     public void FillTempList()

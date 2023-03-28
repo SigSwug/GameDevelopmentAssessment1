@@ -238,7 +238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveData:
     score: 0
-    timeRemainingOnCompletion: 0
     highScoreTimeRemainingOnCompletion:
     - 143.77
     - 72.9

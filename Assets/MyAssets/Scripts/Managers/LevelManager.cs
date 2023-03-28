@@ -71,6 +71,11 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            GameManager.instance.currentPlayers[0].timeLeft = timer.currentTime;
+        }
+
         //UI update
         if (currentState == GameStates.Start)
         {
