@@ -51,7 +51,7 @@ public class LevelManager : MonoBehaviour
         //1800 for 30 minutes
         //1200 for 20 minutes
         //600 for 10 minutes
-        timer.StartTimer(600f);
+        timer.StartTimer(300f);
 
         for (int i = 0; i < players.Length; i++)
         {
@@ -63,51 +63,51 @@ public class LevelManager : MonoBehaviour
     public void SetGameStateToWon()
     {
         currentState = GameStates.Won;
+        GameManager.instance.currentPlayers[0].timeLeft = timer.currentTime;
+        
+        if (currentState == GameStates.Won)
+        {
+            UIManager.UpdateUI();
+            UIManager.EndGameUI();
+            Invoke("SaveResultsAndLoadScene", 1);
+
+            timer.isTiming = false;
+            Time.timeScale = 0.5f;
+        }
     }
     public void SetGameStateToLost()
     {
         currentState = GameStates.Lost;
+        GameManager.instance.currentPlayers[1].timeLeft = timer.currentTime;
+        
+        if (currentState == GameStates.Lost)
+        {
+            UIManager.UpdateUI();
+            UIManager.EndGameUI();
+            Invoke("SaveResultsAndLoadScene", 1);
+
+            timer.isTiming = false;
+            Time.timeScale = 0.5f;
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            GameManager.instance.currentPlayers[0].timeLeft = timer.currentTime;
-        }
-
         //UI update
         if (currentState == GameStates.Start)
         {
             UIManager.UpdateUI();
         }
-        else if (currentState == GameStates.Won)
-        {
-            UIManager.UpdateUI();
-            UIManager.EndGameUI();
-            Invoke("SaveResultsAndLoadScene", 1);
-
-            timer.isTiming = false;
-            Time.timeScale = 0.5f;
-        }
-        else if (currentState == GameStates.Lost)
-        {
-            UIManager.UpdateUI();
-            UIManager.EndGameUI();
-            Invoke("SaveResultsAndLoadScene", 1);
-
-            timer.isTiming = false;
-            Time.timeScale = 0.5f;
-        }
+        
         //run game over if timer runs out before level completion
         else if (currentState == GameStates.GameOver)
         {
             UIManager.UpdateUI();
             UIManager.EndGameUI();
-            Invoke("SaveResultsAndLoadScene", 1);
 
             timer.isTiming = false;
-            Time.timeScale = 0.5f;
+            Invoke("GameFailed", 0.8f);
+            Time.timeScale = 0.2f;
         }
     }
 
@@ -116,5 +116,9 @@ public class LevelManager : MonoBehaviour
         GameManager.instance.FillTempList();
         GameManager.instance.FillSaveData();
         SceneManager.LoadScene("Results");
+    }
+    void GameFailed()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

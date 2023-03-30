@@ -12,7 +12,22 @@ public class ScoreBoardManager : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             scores[i].playerName.text = GameManager.instance.saveData.highScorePlayerNames[i];
-            scores[i].kills.text = "Time Left: " + GameManager.instance.saveData.highScoreTimeRemainingOnCompletion[i];
+            scores[i].kills.text = TimeRemainingFormat(GameManager.instance.saveData.highScoreTimeRemainingOnCompletion[i]);
+        }
+    }
+
+    string TimeRemainingFormat(float currentTime)
+    {
+        string minutes = Mathf.Floor(currentTime / 60).ToString("00");
+        string seconds = (currentTime % 60).ToString("00");
+
+        if (currentTime <= 0)
+        {
+            return "00:00";
+        }
+        else
+        {
+            return string.Format("{0}:{1}", minutes, seconds);
         }
     }
 }

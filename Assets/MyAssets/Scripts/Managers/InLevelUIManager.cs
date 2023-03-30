@@ -9,7 +9,7 @@ public class InLevelUIManager : MonoBehaviour
     public CanvasGroup resultGroup;
     public TMP_Text resultTitle;
 
-    float fadeRate = 0.0001f;
+    float fadeRate = 0.005f;
 
     public void UpdateUI()
     {

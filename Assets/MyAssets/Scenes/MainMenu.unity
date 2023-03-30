@@ -239,10 +239,10 @@ MonoBehaviour:
   saveData:
     score: 0
     highScoreTimeRemainingOnCompletion:
-    - 143.77
-    - 72.9
-    - 119.46
-    - 133.94
+    - 0
+    - 0
+    - 0
+    - 0
     - 0
     - 0
     - 0
@@ -250,10 +250,10 @@ MonoBehaviour:
     - 0
     - 0
     highScorePlayerNames:
-    - Jerry
-    - Klint
-    - Bob
-    - Harry
+    - 
+    - 
+    - 
+    - 
     - 
     - 
     - 
@@ -5435,6 +5435,7 @@ GameObject:
   - component: {fileID: 5737297829098934490}
   - component: {fileID: 5737297829098934485}
   - component: {fileID: 5737297829098934484}
+  - component: {fileID: 5737297829098934491}
   m_Layer: 5
   m_Name: Scores
   m_TagString: Untagged
@@ -5480,6 +5481,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737297829098934486}
   m_CullTransparentMesh: 1
+--- !u!114 &5737297829098934491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5737297829098934486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04105917841dfdd468d1356886b3f502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scores:
+  - {fileID: 5737297829054477652}
+  - {fileID: 5737297827866879032}
+  - {fileID: 5737297827629190519}
+  - {fileID: 5737297828870954024}
+  - {fileID: 5737297828706379746}
+  - {fileID: 5737297828670610841}
+  - {fileID: 5737297828607855399}
+  - {fileID: 5737297828175064329}
+  - {fileID: 5737297829066248168}
+  - {fileID: 5737297828932381317}
 --- !u!114 &5737297829116756408
 MonoBehaviour:
   m_ObjectHideFlags: 0
