@@ -30,6 +30,7 @@ public class LevelManager : MonoBehaviour
     //list of player prefabs
     [Header("Players")]
     public GameObject[] players;
+    public GameObject[] inLevelPlayerNames;
     public Vector3[] playerRespawnPosition;
 
     //timer
@@ -53,9 +54,9 @@ public class LevelManager : MonoBehaviour
         //600 for 10 minutes
         timer.StartTimer(300f);
 
-        for (int i = 0; i < players.Length; i++)
+        for (int i = 0; i < inLevelPlayerNames.Length; i++)
         {
-            players[i].GetComponentInChildren<TMP_Text>().text = GameManager.instance.currentPlayers[i].playerName;
+            inLevelPlayerNames[i].GetComponentInChildren<TMP_Text>().text = GameManager.instance.currentPlayers[i].playerName;
         }
     }
 
