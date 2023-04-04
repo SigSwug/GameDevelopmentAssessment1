@@ -52,7 +52,7 @@ public class LevelManager : MonoBehaviour
         //1800 for 30 minutes
         //1200 for 20 minutes
         //600 for 10 minutes
-        timer.StartTimer(300f);
+        timer.StartTimer(600f);
 
         for (int i = 0; i < inLevelPlayerNames.Length; i++)
         {
