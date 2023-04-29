@@ -35,6 +35,9 @@ public class CharacterMovementTutorial : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
 
         cam = GetComponentInChildren<Camera>();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()

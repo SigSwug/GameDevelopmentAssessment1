@@ -72,6 +72,9 @@ public class LevelManager : MonoBehaviour
             UIManager.EndGameUI();
             Invoke("SaveResultsAndLoadScene", 1);
 
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             timer.isTiming = false;
             Time.timeScale = 0.5f;
         }
@@ -86,6 +89,9 @@ public class LevelManager : MonoBehaviour
             UIManager.UpdateUI();
             UIManager.EndGameUI();
             Invoke("SaveResultsAndLoadScene", 1);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
             timer.isTiming = false;
             Time.timeScale = 0.5f;
@@ -106,8 +112,11 @@ public class LevelManager : MonoBehaviour
             UIManager.UpdateUI();
             UIManager.EndGameUI();
 
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
             timer.isTiming = false;
-            Invoke("GameFailed", 0.8f);
+            Invoke("GameFailed", 0.6f);
             Time.timeScale = 0.2f;
         }
     }

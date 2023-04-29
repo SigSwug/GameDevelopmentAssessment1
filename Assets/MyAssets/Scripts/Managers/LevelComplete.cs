@@ -12,7 +12,6 @@ public class LevelComplete : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             levelFinished.Invoke();
-            //LevelManager.instance.currentState = LevelManager.GameStates.Won;
         }
     }
 }
