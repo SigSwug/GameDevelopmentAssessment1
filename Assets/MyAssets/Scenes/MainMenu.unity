@@ -678,7 +678,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Player 1:
+  m_text: 'Player 2:
 
     Control player 2 by using an Xbox Controller'
   m_isRightToLeft: 0
