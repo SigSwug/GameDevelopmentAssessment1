@@ -18,12 +18,12 @@ EditorBuildSettings:
     path: Assets/MyAssets/Scenes/WaitingForPlayers.unity
     guid: 6016e68b2d80a9a41897afe4e8d99de9
   - enabled: 1
-    path: Assets/MyAssets/Scenes/Lobby.unity
-    guid: a8ef0636083e91d4ba58bfa763bee7e9
-  - enabled: 1
     path: Assets/MyAssets/Scenes/Level_1.unity
     guid: 518b27aca7eb62144b5412bf286f82fd
   - enabled: 1
     path: Assets/MyAssets/Scenes/Results.unity
     guid: e715278223977f849825ed58213226c8
+  - enabled: 0
+    path: Assets/MyAssets/Scenes/Lobby.unity
+    guid: a8ef0636083e91d4ba58bfa763bee7e9
   m_configObjects: {}
