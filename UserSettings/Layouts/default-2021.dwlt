@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -215,8 +215,8 @@ MonoBehaviour:
     y: 0
     width: 1143
     height: 700
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -432,9 +432,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: ba7d0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6a65ffffd66effff0e70ffffd071ffffbe74ffff6aaeffffb2b5ffff52b8ffff28f2fffff0f2ffffa8f3ffffdefaffff307f0000407f0000a47f00007c860000ec870000
+      m_ExpandedIDs: 160fffff6613ffff2418ffff9421ffffb648ffffdefafffff4ffffffd0d400004cd50000e0f0000072f10000c4f100005af30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -450,7 +450,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 9}
+        m_ClientGUIView: {fileID: 8}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -705,9 +705,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 969.12494, y: 551.4552, z: 0.37140036}
+    m_Target: {x: 984.72156, y: 570.71277, z: 3.0322266}
     speed: 2
-    m_Value: {x: 969.12494, y: 551.4552, z: 0.37140036}
+    m_Value: {x: 984.72156, y: 570.71277, z: 3.0322266}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -758,9 +758,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 575.7749
+    m_Target: 601.68475
     speed: 2
-    m_Value: 575.7749
+    m_Value: 601.68475
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -981,10 +981,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 31}
+    scrollPos: {x: 0, y: 74}
     m_SelectedIDs: 887d0000
     m_LastClickedID: 32136
-    m_ExpandedIDs: 000000003a7d00003c7d00003e7d0000407d0000
+    m_ExpandedIDs: 000000003a7d00003c7d00003e7d0000407d00008a7d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
