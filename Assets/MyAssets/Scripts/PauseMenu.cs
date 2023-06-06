@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -22,7 +22,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Unpause()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

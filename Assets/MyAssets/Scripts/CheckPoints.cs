@@ -23,7 +23,7 @@ public class CheckPoints : MonoBehaviour
         if (other.tag == "Player")
         {
             int playerNumber = other.GetComponent<PlayerNumber>().playerNumber - 1;
-            LevelManager.instance.playerRespawnPosition[playerNumber] = transform.position;
+            OnlineLevelManager.instance.playerRespawnPosition[playerNumber] = transform.position;
 
             ren.material.SetColor("_Color", activeBase);
             ren.material.SetColor("_EmissionColor", activeEmission);

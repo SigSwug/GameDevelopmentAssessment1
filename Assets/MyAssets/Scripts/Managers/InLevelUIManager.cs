@@ -5,6 +5,8 @@ using TMPro;
 
 public class InLevelUIManager : MonoBehaviour
 {
+    public bool isOnline = false;
+
     public TMP_Text centreText;
     public CanvasGroup resultGroup;
     public TMP_Text resultTitle;
@@ -13,13 +15,27 @@ public class InLevelUIManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        if (LevelManager.instance.currentState == LevelManager.GameStates.Start)
+        if (!isOnline)
         {
-            centreText.text = "Time Remaining: \n" + LevelManager.instance.timer.displayTime;
+            if (LevelManager.instance.currentState == LevelManager.GameStates.Start)
+            {
+                centreText.text = "Time Remaining: \n" + LevelManager.instance.timer.displayTime;
+            }
+            else if (LevelManager.instance.currentState == LevelManager.GameStates.GameOver)
+            {
+                centreText.text = "GAMEOVER!";
+            }
         }
-        else if (LevelManager.instance.currentState == LevelManager.GameStates.GameOver)
+        else
         {
-            centreText.text = "GAMEOVER!";
+            if (OnlineLevelManager.instance.currentState == OnlineLevelManager.GameStates.Start)
+            {
+                centreText.text = "Time Remaining: \n" + OnlineLevelManager.instance.timer.displayTime;
+            }
+            else if (OnlineLevelManager.instance.currentState == OnlineLevelManager.GameStates.GameOver)
+            {
+                centreText.text = "GAMEOVER!";
+            }
         }
     }
 
@@ -30,13 +46,27 @@ public class InLevelUIManager : MonoBehaviour
 
     IEnumerator DisplayCanvas(float rate)
     {
-        if (LevelManager.instance.currentState == LevelManager.GameStates.Won)
+        if (!isOnline)
         {
-            resultTitle.text = ("Congrats Player 1, You've Won!");
+            if (LevelManager.instance.currentState == LevelManager.GameStates.Won)
+            {
+                resultTitle.text = ("Congrats Player 1, You've Won!");
+            }
+            else if (LevelManager.instance.currentState == LevelManager.GameStates.Lost)
+            {
+                resultTitle.text = ("Congrats Player 2, You've Won!");
+            }
         }
-        else if (LevelManager.instance.currentState == LevelManager.GameStates.Lost)
+        else
         {
-            resultTitle.text = ("Congrats Player 2, You've Won!");
+            if (OnlineLevelManager.instance.currentState == OnlineLevelManager.GameStates.Won)
+            {
+                resultTitle.text = ("Congrats Player 1, You've Won!");
+            }
+            else if (OnlineLevelManager.instance.currentState == OnlineLevelManager.GameStates.Lost)
+            {
+                resultTitle.text = ("Congrats Player 2, You've Won!");
+            }
         }
 
         while (resultGroup.alpha < 0.9)

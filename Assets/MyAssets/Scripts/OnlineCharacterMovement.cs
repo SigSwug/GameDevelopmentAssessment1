@@ -31,7 +31,8 @@ public class OnlineCharacterMovement : MonoBehaviour
         cc = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
 
-        cam = GetComponentInChildren<Camera>();
+        //cam = GetComponentInChildren<Camera>(); Previous version
+        cam = Camera.main;
         view = GetComponent<PhotonView>();
 
         Cursor.lockState = CursorLockMode.Locked;

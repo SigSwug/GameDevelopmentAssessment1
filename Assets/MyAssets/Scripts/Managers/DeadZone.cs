@@ -11,11 +11,11 @@ public class DeadZone : MonoBehaviour
             int playerNumber = other.GetComponent<PlayerNumber>().playerNumber - 1;
 
             //Get a reference to the movement script and deactivate it.
-            CharacterMovementTutorial moveScript = other.GetComponent<CharacterMovementTutorial>();
+            OnlineCharacterMovement moveScript = other.GetComponent<OnlineCharacterMovement>();
             moveScript.enabled = false;
 
             //Move the player to the spawn point.
-            other.gameObject.transform.position = LevelManager.instance.playerRespawnPosition[playerNumber];
+            other.gameObject.transform.position = OnlineLevelManager.instance.playerRespawnPosition[playerNumber];
 
             //Starts a corutine to restart the movesciprt after a brief pause.
             StartCoroutine(ReactivateMovement(moveScript));
@@ -23,7 +23,7 @@ public class DeadZone : MonoBehaviour
     }
 
     //Restarts the move script
-    IEnumerator ReactivateMovement(CharacterMovementTutorial player)
+    IEnumerator ReactivateMovement(OnlineCharacterMovement player)
     {
         yield return new WaitForSeconds(1);
         player.enabled = true;

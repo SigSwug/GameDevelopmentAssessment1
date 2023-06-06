@@ -46,7 +46,12 @@ public class OnlineLobby : MonoBehaviourPunCallbacks
         PhotonNetwork.LocalPlayer.NickName = playerName.text;
     }
 
-    public void LoadLevel()
+    public void LoadLevelWithDelay()
+    {
+        Invoke("LoadLevel", 0.3f);
+    }
+
+    void LoadLevel()
     {
         if (!PhotonNetwork.IsMasterClient)
         {

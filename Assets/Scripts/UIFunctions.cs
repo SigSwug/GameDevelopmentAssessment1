@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class UIFunctions : MonoBehaviour
 {
-    public void SceneTransitions(string levelName)
+    public void SceneTransitions(string loadLevel)
     {
-        StartCoroutine(ChangeScene());
-        SceneManager.LoadScene(levelName);
+        StartCoroutine(ChangeScene(loadLevel));
     }
-    IEnumerator ChangeScene()
+    IEnumerator ChangeScene(string levelName)
     {
         yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene(levelName);
+        yield return null;
     }
 
     /*public void LoadLevel(string levelName)

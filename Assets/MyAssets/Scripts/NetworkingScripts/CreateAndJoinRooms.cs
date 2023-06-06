@@ -20,11 +20,20 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
     #region Public Functions
 
-    public void JoinRoom()
+    public void JoinRoomWithDelay()
+    {
+        Invoke("JoinRoom", 0.3f);
+    }
+    public void CreateRoomWithDelay()
+    {
+        Invoke("CreateRoom", 0.3f);
+    }
+
+    void JoinRoom()
     {
         PhotonNetwork.JoinRoom(joinRoomName.text);
     }
-    public void CreateRoom()
+    void CreateRoom()
     {
         PhotonNetwork.CreateRoom(createRoomName.text, new RoomOptions { MaxPlayers = maxPlayersPerRoom });
     }

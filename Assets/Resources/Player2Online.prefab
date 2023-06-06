@@ -83,7 +83,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dbf06eb6195de9a4cb5b285fe0854ca0, type: 2}
+  - {fileID: 2100000, guid: 98efcac1b06df734681fac586c317c97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2804,7 +2804,7 @@ GameObject:
   - component: {fileID: 1994628151587935922}
   - component: {fileID: 6382068538246522620}
   m_Layer: 0
-  m_Name: Player1Online
+  m_Name: Player2Online
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2944,7 +2944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37225f060c608b41abe2e8447768bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 1
+  playerNumber: 2
 --- !u!114 &5094202006875935687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3515,7 +3515,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 98efcac1b06df734681fac586c317c97, type: 2}
+  - {fileID: 2100000, guid: dbf06eb6195de9a4cb5b285fe0854ca0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

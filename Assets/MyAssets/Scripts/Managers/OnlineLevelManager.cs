@@ -38,7 +38,7 @@ public class OnlineLevelManager : MonoBehaviour
 
     //timer
     [Header("LevelSettings")]
-    public Timer timer;
+    public OnlineTimer timer;
     public PlayerData playerData;
 
     //game states
@@ -73,16 +73,27 @@ public class OnlineLevelManager : MonoBehaviour
         int a = PhotonNetwork.LocalPlayer.ActorNumber - 1;
         GameObject player = PhotonNetwork.Instantiate(playerPrefabs[a].name, playerSpawns[a].position, Quaternion.identity).gameObject;
         if (player == null) Debug.Log("No player reference");
-        view.RPC("AddPlayerToList", RpcTarget.All, a, player);
+
+        Invoke("CallAddPlayerToList", 1);
 
         //assign camera in scene
-        player.GetComponentInChildren<Camera>().tag = "MainCamera";
+        //player.GetComponentInChildren<Camera>().tag = "MainCamera";
+    }
+
+    void CallAddPlayerToList()
+    {
+        view.RPC("AddPlayerToList", RpcTarget.All);
     }
 
     [PunRPC]
-    void AddPlayerToList(int num, GameObject player)
+    void AddPlayerToList() //find all the instances of players and add them to the array
     {
-        players[num] = player;
+        GameObject[] playersFound = GameObject.FindGameObjectsWithTag("Player"); //find the objects
+        foreach(GameObject player in playersFound) //itterate through each object
+        {
+            int playerNum = player.GetComponent<PhotonView>().OwnerActorNr - 1;
+            players[playerNum] = player;
+        }
     }
 
     //Used in Unity Events on the finish line objects
