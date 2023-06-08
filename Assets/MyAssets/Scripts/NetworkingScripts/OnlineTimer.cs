@@ -69,17 +69,17 @@ public class OnlineTimer : MonoBehaviour, IOnEventCallback
 
     void Update()
     {
-        if (LevelManager.instance.currentState == LevelManager.GameStates.Won)
+        if (OnlineLevelManager.instance.currentState == OnlineLevelManager.GameStates.Won)
         {
             isTiming = false;
         }
-        else if (LevelManager.instance.currentState == LevelManager.GameStates.Lost)
+        else if (OnlineLevelManager.instance.currentState == OnlineLevelManager.GameStates.Lost)
         {
             isTiming = false;
         }
         else if (currentTime <= 0)
         {
-            LevelManager.instance.currentState = LevelManager.GameStates.GameOver;
+            OnlineLevelManager.instance.currentState = OnlineLevelManager.GameStates.GameOver;
         }
     }
 

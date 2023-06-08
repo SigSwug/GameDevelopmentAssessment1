@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 194664339}
   - component: {fileID: 194664338}
   m_Layer: 5
-  m_Name: Player 1
+  m_Name: Instructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,8 +519,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.7105556}
   m_AnchorMax: {x: 0.5, y: 0.7105556}
-  m_AnchoredPosition: {x: -0.00021935, y: -2}
-  m_SizeDelta: {x: 588.05225, y: 277.91998}
+  m_AnchoredPosition: {x: 0.000030518, y: 0}
+  m_SizeDelta: {x: 1108.4708, y: 277.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &194664338
 MonoBehaviour:
@@ -542,9 +542,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Player 1:
-
-    Control player 1 by using a Mouse and Keyboard'
+  m_text: This is a platformer game, in which you race against your opponent, and
+    compete for who can finish first.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fa557f5b30f8deb4686a7f3fd85969b9, type: 2}
   m_sharedMaterial: {fileID: 6433009196157875642, guid: fa557f5b30f8deb4686a7f3fd85969b9, type: 2}
@@ -1344,8 +1343,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.41185188}
   m_AnchorMax: {x: 0.5, y: 0.41185188}
-  m_AnchoredPosition: {x: 0.000025087, y: 0}
-  m_SizeDelta: {x: 588.0522, y: 277.699}
+  m_AnchoredPosition: {x: 0.000091553, y: 0}
+  m_SizeDelta: {x: 1249.1243, y: 277.699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &544334851
 MonoBehaviour:
@@ -1367,9 +1366,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Player 2:
+  m_text: 'You may also find yourself racing against your previous times.
 
-    Control player 2 by using an Xbox Controller'
+    Good
+    luck in setting a new highscore'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fa557f5b30f8deb4686a7f3fd85969b9, type: 2}
   m_sharedMaterial: {fileID: 6433009196157875642, guid: fa557f5b30f8deb4686a7f3fd85969b9, type: 2}
