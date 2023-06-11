@@ -8,6 +8,8 @@ using ExitGames.Client.Photon;
 
 public class OnlineTimer : MonoBehaviour, IOnEventCallback
 {
+    PhotonView view;
+
     public float startTime;
     public float currentTime;
 
@@ -40,6 +42,11 @@ public class OnlineTimer : MonoBehaviour, IOnEventCallback
         }
     }
     #endregion
+
+    void Start()
+    {
+        view = GetComponent<PhotonView>();
+    }
 
     void FixedUpdate()
     {
@@ -79,8 +86,13 @@ public class OnlineTimer : MonoBehaviour, IOnEventCallback
         }
         else if (currentTime <= 0)
         {
-            OnlineLevelManager.instance.currentState = OnlineLevelManager.GameStates.GameOver;
+            view.RPC("TimesUp", RpcTarget.All);
         }
+    }
+    [PunRPC]
+    void TimesUp()
+    {
+        OnlineLevelManager.instance.currentState = OnlineLevelManager.GameStates.GameOver;
     }
 
     public void StartTimer(float length)

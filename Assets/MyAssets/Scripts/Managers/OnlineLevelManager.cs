@@ -51,6 +51,8 @@ public class OnlineLevelManager : MonoBehaviour
 
     void Start()
     {
+        currentState = GameStates.Start;
+
         view = GetComponent<PhotonView>();
         Time.timeScale = 1;
 
@@ -101,7 +103,7 @@ public class OnlineLevelManager : MonoBehaviour
     {
         currentState = GameStates.Won;
         GameManager.instance.currentPlayers[0].timeLeft = timer.currentTime;
-        
+
         if (currentState == GameStates.Won)
         {
             UIManager.UpdateUI();
@@ -119,7 +121,7 @@ public class OnlineLevelManager : MonoBehaviour
     {
         currentState = GameStates.Lost;
         GameManager.instance.currentPlayers[1].timeLeft = timer.currentTime;
-        
+
         if (currentState == GameStates.Lost)
         {
             UIManager.UpdateUI();

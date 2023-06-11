@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Example stuff that hasn't been removed
     public void AddPlayerScore(PlayerData data)
     {
         if (tempScoreBoard.Contains(data))
