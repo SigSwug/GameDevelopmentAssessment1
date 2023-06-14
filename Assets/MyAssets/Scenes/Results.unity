@@ -4259,7 +4259,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1125667068}
         m_TargetAssemblyTypeName: UIFunctions, Assembly-CSharp
-        m_MethodName: SceneTransitions
+        m_MethodName: DisconnectToScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
