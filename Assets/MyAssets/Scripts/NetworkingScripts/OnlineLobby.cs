@@ -43,8 +43,7 @@ public class OnlineLobby : MonoBehaviourPunCallbacks
 
     public void UpdateName()
     {
-        //PhotonNetwork.LocalPlayer.NickName = playerName.text;
-
+        PhotonNetwork.LocalPlayer.NickName = playerName.text;
         GameManager.instance.currentPlayers[PhotonNetwork.LocalPlayer.ActorNumber - 1].playerName = playerName.text;
     }
 

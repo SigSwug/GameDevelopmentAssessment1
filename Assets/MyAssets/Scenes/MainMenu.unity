@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 544334852}
   - component: {fileID: 544334851}
   m_Layer: 5
-  m_Name: Player 2
+  m_Name: Instructions 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1369,7 +1369,7 @@ MonoBehaviour:
   m_text: 'You may also find yourself racing against your previous times.
 
     Good
-    luck in setting a new highscore'
+    luck in setting a new highscore.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fa557f5b30f8deb4686a7f3fd85969b9, type: 2}
   m_sharedMaterial: {fileID: 6433009196157875642, guid: fa557f5b30f8deb4686a7f3fd85969b9, type: 2}
@@ -1789,8 +1789,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.11444446}
   m_AnchorMax: {x: 0.5, y: 0.11444446}
-  m_AnchoredPosition: {x: -0.00026893616, y: 3}
-  m_SizeDelta: {x: 678.2441, y: 179.79}
+  m_AnchoredPosition: {x: -0.000030518, y: 0}
+  m_SizeDelta: {x: 1018.8565, y: 179.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176188586
 MonoBehaviour:
@@ -1812,7 +1812,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You may also pause at any point during gameplay using the Esc key
+  m_text: At any point during gameplay, you can bring up a menu using the Esc key,
+    allowing you to exit the game early.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fa557f5b30f8deb4686a7f3fd85969b9, type: 2}
   m_sharedMaterial: {fileID: 6433009196157875642, guid: fa557f5b30f8deb4686a7f3fd85969b9, type: 2}

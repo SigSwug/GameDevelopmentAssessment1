@@ -7,7 +7,7 @@ using Photon.Pun;
 
 /// <summary>
 /// Manages Game State in a level, manages respawning, and timer
-/// </summary>
+/// <summary>
 
 public class OnlineLevelManager : MonoBehaviour
 {
@@ -69,6 +69,7 @@ public class OnlineLevelManager : MonoBehaviour
         Invoke("SpawnPlayerAtStart", 1);
     }
 
+    #region Instantiate the Players over the PhotonNetwork
     void SpawnPlayerAtStart()
     {
         //SpawnPlayer
@@ -77,9 +78,6 @@ public class OnlineLevelManager : MonoBehaviour
         if (player == null) Debug.Log("No player reference");
 
         Invoke("CallAddPlayerToList", 1);
-
-        //assign camera in scene
-        //player.GetComponentInChildren<Camera>().tag = "MainCamera";
     }
 
     void CallAddPlayerToList()
@@ -95,9 +93,12 @@ public class OnlineLevelManager : MonoBehaviour
         {
             int playerNum = player.GetComponent<PhotonView>().OwnerActorNr - 1;
             players[playerNum] = player;
+            GameManager.instance.currentPlayers[playerNum].playerName = PhotonNetwork.PlayerList[playerNum].NickName;
         }
     }
+    #endregion
 
+    #region Set Game State to Won/Lost
     //Used in Unity Events on the finish line objects
     public void SetGameStateToWon()
     {
@@ -135,6 +136,7 @@ public class OnlineLevelManager : MonoBehaviour
             Time.timeScale = 0.5f;
         }
     }
+    #endregion
 
     void Update()
     {
